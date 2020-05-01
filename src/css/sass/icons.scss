@@ -1,0 +1,13 @@
+@import './mixin.scss';
+@import './variables.scss';
+
+.menu-icon,
+.cross-icon{
+    fill: $grey-3;
+    transition: all 0.4s;
+}
+
+.cross-icon{
+    transform: translateX(200%);
+    
+}

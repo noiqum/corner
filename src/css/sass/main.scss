@@ -1,4 +1,8 @@
 @import './variables.scss';
+@import './mixin.scss';
+@import './navbar.scss';
+@import './container.scss';
+@import './icons.scss';
 
 
 
@@ -10,4 +14,5 @@ body{
     margin:0;
     padding: 0;
     box-sizing: border-box;
+    
 }
