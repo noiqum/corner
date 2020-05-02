@@ -3,6 +3,8 @@ import SearchIcon from '../icons/search-icon';
 import MenuIcon from '../icons/menu-icon';
 import CrossIcon from '../icons/cross-icon';
 import '../../css/sass/navbar.scss';
+import {Link} from 'react-router-dom';
+
 
 
 export class navbar extends Component {
@@ -38,9 +40,9 @@ export class navbar extends Component {
 
 
     render() {
-        return (
+        return (<div>
             <div className='navbar'>
-                <div className="navbar__logo">Corner</div>
+                <div className="navbar__logo"><Link to='/'>corner</Link></div>
                 <div className="navbar__search">
                     <form action="">
                     <input type="text" className="navbar__search__input"/>
@@ -56,8 +58,32 @@ export class navbar extends Component {
                    </label>
                 </div>
                 <div  id='navbar__slide'className="navbar__slide">
-                    
+                    <div className="navbar__slide__links">
+                    <Link className='navbar__slide__link' onClick={this.menuClick} to="/signin">Sign In</Link>
+                    <Link className='navbar__slide__link' onClick={this.menuClick} to='/shop'> Shop</Link>
+                    <Link className='navbar__slide__link' onClick={this.menuClick} to='/contact'>Contact</Link>
+                    </div>
                 </div>
+            </div>
+            {/* larger screen version//////////////////////////////////////////////////////////////////////////////////// */}
+
+            <div className="navbar-lg">
+                <div className="navbar-lg__logo">corner</div>
+                <div className="navbar-lg__search">
+                    <form action="" className="navbar-lg__search__form">
+                        <input type="text" className="navbar-lg__search__form__input"/>
+                        <button className="navbar-lg__search__button">
+                            <SearchIcon/>
+                        </button>
+                    </form>
+                </div>
+                <div className="navbar-lg__links">
+                    <Link className='navbar-lg__link' onClick={this.menuClick} to="/signin">Sign In</Link>
+                    <Link className='navbar-lg__link' onClick={this.menuClick} to='/shop'> Shop</Link>
+                    <Link className='navbar-lg__link' onClick={this.menuClick} to='/contact'>Contact</Link>
+                    <Link className='navbar-lg__link' onClick={this.menuClick} to='/contact'>user</Link>
+                </div>
+            </div>
             </div>
         )
     }

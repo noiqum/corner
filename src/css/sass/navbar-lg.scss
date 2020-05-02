@@ -1,0 +1,68 @@
+@import './mixin.scss';
+@import './variables.scss';
+
+
+.navbar-lg{
+    display: none;
+
+    @include respond(middle){
+
+        display: flex;
+        width: 100%;
+        min-height: 10vh;
+        justify-content: space-between;
+        flex-direction: row;
+        align-items: center;
+
+    }
+
+    &__logo{
+        font-size: 2.2rem;
+        font-weight: 600;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        margin-left: 2rem;
+        margin-right: 3rem;
+    }
+
+    &__search{
+        display: flex;
+        flex: 1 1 33%;
+        &__form{
+            width: 90%;
+            &__input{
+                background-image: linear-gradient(to right,$black,$grey-1);
+                border-radius: 50px;
+                border: none;
+                height: 2.5rem;
+                color:#fff;
+                padding: 0.5rem 3rem;
+                margin-right: -3.3rem;
+                width: 70%;
+            }
+        }
+        &__button{
+            border: none;
+            background-color: transparent;
+        }
+    }
+    &__links{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        flex: 0 0 33%;
+        
+        & a{
+            font-size: 2rem;
+            text-transform: capitalize;
+            text-decoration: none;
+            color:$grey-3;
+
+            @media screen and (min-width:600px) 
+            and (max-width:800px){
+                font-size: 1.3rem;
+            }
+        }
+    }
+}

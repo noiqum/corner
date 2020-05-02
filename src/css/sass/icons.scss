@@ -2,12 +2,25 @@
 @import './variables.scss';
 
 .menu-icon,
-.cross-icon{
+.cross-icon,
+.search-icon{
     fill: $grey-3;
     transition: all 0.4s;
 }
 
 .cross-icon{
     transform: translateX(200%);
-    
+    margin-right: 2rem;
+}
+
+.search-icon{
+    width: 2rem;
+    height: 2rem;
+    display: inline-block;
+    margin-top: 0.5rem;
+
+    @include respond(middle){
+        fill: purple;
+        margin-top: 1rem;
+    }
 }

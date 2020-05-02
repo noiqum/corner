@@ -9,11 +9,50 @@
     min-height: 10vh;
     position: relative;
 
+    @include respond(middle){
+        display: none;
+    }
 
+    &__logo{
+        background-image:linear-gradient(to right,$black,$grey-2) ;
+        font-size: 1.6rem;
+        letter-spacing: 2px;
+        color:transparent;
+        margin-left: 1rem;
+        background-clip: text;
+        cursor: pointer;
+        text-transform: uppercase;
+        font-weight: 600;
+        margin-right: 1.5rem;
+        & a{
+            all:inherit;
+        }
+    }
+    &__search{
+
+        &__input{
+            
+            padding: 0.7rem 2rem;
+            border-radius: 50px;
+            border: none;
+            background-color: $grey-1;
+            margin-right: -4rem;
+            width:100%;
+        }
+
+        &__button{
+            width: 2.5rem;
+            height: 2.5rem;
+            position: absolute;
+            background-color: $grey-1;
+            border: none;
+            cursor: pointer;
+        }
+    }
 
 
     &__hamburger{
-
+        margin-left: 6rem;
         @include respond(middle){
             display: none;
         }
@@ -34,20 +73,55 @@
 
     &__slide{
         width: 100%;
-        height: 3px;
+        height: 90vh;
         background-color: $grey-6;
         transition: all 0.5s;
         position: absolute;
         left: 0;
         top: 100%;
-        transition: all 0.8s;
+        
         color: $grey-1;
+        display: none;
+        z-index: 100;
+        
 
         @include respond(middle){
             display: none;
 
         }
+        &__links{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: center;
+            height: 100%;
+            width: 100%;
+
+            & > a:hover{
+                color: purple;
+                transition: all 0.5s;
+                
+            }
+        }
+        & a{
+
+            font-size: 4rem;
+            text-decoration: none;
+            color:$grey-1;
+            letter-spacing: 2px;
+            border-bottom: 2px solid $grey-1;
+            padding: 0.5rem 1rem;
+            
+        }
+        
+
+        
+
     }
+}
+
+#navbar__slide:hover{
+    color: purple;
 }
 
 .trans{
@@ -60,6 +134,9 @@
 }
 
 .collapse{
-    min-height: 90vh;
+   display: block;
     width: 100%;
+    transition: all 0.4s;
+
 }
+
