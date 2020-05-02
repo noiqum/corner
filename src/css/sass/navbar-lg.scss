@@ -44,6 +44,7 @@
         &__button{
             border: none;
             background-color: transparent;
+            
         }
     }
     &__links{
@@ -58,11 +59,25 @@
             text-transform: capitalize;
             text-decoration: none;
             color:$grey-3;
+            padding: 1rem;
+            transition: all 0.5s;
+            
 
             @media screen and (min-width:600px) 
             and (max-width:800px){
                 font-size: 1.3rem;
             }
+            &:hover{
+                border-bottom: 1px solid purple;
+                
+            }
+            
+            
+        }
+    }
+    &__link{
+        &:active{
+            border: unset;
         }
     }
 }

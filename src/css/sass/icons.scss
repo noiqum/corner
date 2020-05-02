@@ -21,6 +21,7 @@
 
     @include respond(middle){
         fill: purple;
-        margin-top: 1rem;
+        margin-top: 2rem;
+        display: inline-block;
     }
 }

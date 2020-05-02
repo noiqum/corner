@@ -1,0 +1,14 @@
+@import './mixin.scss';
+@import './variables.scss';
+
+.container-mobile{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    max-width: 90%;
+    min-height: 90%;
+    margin: 0 auto;
+    margin-top: 2rem;
+}
