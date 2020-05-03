@@ -237,6 +237,45 @@
     padding: 2rem 3rem;
     clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%); }
 
+.signin {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 90%;
+  min-height: 70vh;
+  margin: 0 auto; }
+  .signin__email {
+    padding: 1rem 2rem;
+    border: none;
+    border-bottom: 1px solid #666666;
+    margin-bottom: 2rem; }
+    .signin__email__label {
+      font-size: 1.6rem;
+      pointer-events: none;
+      text-transform: capitalize;
+      letter-spacing: 2px;
+      transform: translateY(-60px); }
+  .signin__password {
+    padding: 1rem 2rem;
+    border: none;
+    border-bottom: 1px solid #666666;
+    margin-bottom: 2rem; }
+    .signin__password__label {
+      font-size: 1.6rem;
+      pointer-events: none;
+      text-transform: capitalize;
+      letter-spacing: 2px;
+      transform: translateY(-60px); }
+
+input[type=email]:focus + label {
+  color: purple;
+  font-size: 1.2rem; }
+
+input[type=password]:focus + label {
+  color: purple;
+  font-size: 1.2rem; }
+
 :root {
   font-size: 10px; }
 

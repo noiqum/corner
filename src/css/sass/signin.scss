@@ -1,0 +1,51 @@
+@import './variables.scss';
+@import './mixin.scss';
+
+
+.signin{
+
+    @include center;
+    width: 90%;
+    min-height:70vh;
+    margin: 0 auto;
+
+    &__email{
+        @include input;
+        
+        
+        &__label{
+            @include label;
+
+        }
+       
+    }
+
+    &__password{
+        @include input;
+
+        &__label{
+            @include label;
+        }
+    }
+
+    &__buttons{
+
+        &-register{
+
+        }
+        &-submit{
+
+        }
+    }
+}
+
+
+input[type=email]:focus + label{
+    color: purple;
+    font-size: 1.2rem;
+}
+
+input[type=password]:focus + label{
+    color: purple;
+    font-size: 1.2rem;
+}
