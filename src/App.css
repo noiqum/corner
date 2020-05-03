@@ -255,7 +255,7 @@
       pointer-events: none;
       text-transform: capitalize;
       letter-spacing: 2px;
-      transform: translateY(-60px); }
+      transform: translateY(-80px); }
   .signin__password {
     padding: 1rem 2rem;
     border: none;
@@ -266,7 +266,7 @@
       pointer-events: none;
       text-transform: capitalize;
       letter-spacing: 2px;
-      transform: translateY(-60px); }
+      transform: translateY(-80px); }
 
 input[type=email]:focus + label {
   color: purple;

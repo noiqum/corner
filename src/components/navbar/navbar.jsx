@@ -4,13 +4,15 @@ import MenuIcon from '../icons/menu-icon';
 import CrossIcon from '../icons/cross-icon';
 import '../../css/sass/navbar.scss';
 import {Link} from 'react-router-dom';
+import {auth} from '../../firebase/firebase.utils';
 
 
 
 export class navbar extends Component {
 
     state={
-        menuOpen:false
+        menuOpen:false,
+        currentUser:null
 
     }
     
@@ -38,6 +40,21 @@ export class navbar extends Component {
       
   }
 
+  signoutHandle=()=>{
+      auth.signOut().then(
+
+        this.setState({currentUser:null})
+      )
+  }
+
+    componentDidMount(){
+        auth.onAuthStateChanged(user=>{
+            this.setState({
+                currentUser:user
+            })
+            console.log(user)
+        })
+    }
 
     render() {
         return (<div>
@@ -59,7 +76,12 @@ export class navbar extends Component {
                 </div>
                 <div  id='navbar__slide'className="navbar__slide">
                     <div className="navbar__slide__links">
+                    {this.state.currentUser === null 
+                    ?
                     <Link className='navbar__slide__link' onClick={this.menuClick} to="/signin">Sign In</Link>
+                    :
+                    <Link className="navbar__slide__link" onClick={this.signoutHandle} to='/'>Sign out</Link>
+                    }
                     <Link className='navbar__slide__link' onClick={this.menuClick} to='/shop'> Shop</Link>
                     <Link className='navbar__slide__link' onClick={this.menuClick} to='/contact'>Contact</Link>
                     </div>
@@ -78,7 +100,11 @@ export class navbar extends Component {
                     </form>
                 </div>
                 <div className="navbar-lg__links">
+                    {this.state.currentUser === null
+                     ?
                     <Link className='navbar-lg__link' onClick={this.menuClick} to="/signin">Sign In</Link>
+                    :
+                    <Link className="navbar-lg__link" onClick={this.signoutHandle}>Sign out</Link>}
                     <Link className='navbar-lg__link' onClick={this.menuClick} to='/shop'> Shop</Link>
                     <Link className='navbar-lg__link' onClick={this.menuClick} to='/contact'>Contact</Link>
                     <Link className='navbar-lg__link' onClick={this.menuClick} to='/contact'>user</Link>
