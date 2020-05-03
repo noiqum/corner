@@ -11,4 +11,28 @@
     min-height: 90%;
     margin: 0 auto;
     margin-top: 2rem;
+    @include respond(middle){
+        display: none;
+    }
+    
+}
+
+.container-lg{
+    display: none;
+
+    @include respond(middle){
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        margin-top: 2rem;
+        overflow: hidden;
+    }
+
+    & a{
+        @include respond(middle){
+            flex: 0 0 auto;
+        }
+    }
 }

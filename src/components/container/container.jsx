@@ -14,12 +14,16 @@ export class container extends Component {
                 <div className="container-mobile">
                     {this.state.sections.map(
                         item=>{
-                           return <Item item={item}/>
+                           return <Item key={item.id} item={item}/>
                         }
                     )}
                 </div>
                 <div className="container-lg">
-
+                {this.state.sections.map(
+                        item=>{
+                           return <Item key={item.id} item={item}/>
+                        }
+                    )}
                 </div>
             </div>
         )
