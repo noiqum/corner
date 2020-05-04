@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {Link ,Redirect} from 'react-router-dom';
 import {auth} from '../../firebase/firebase.utils';
 
+
 export class signin extends Component {
 
     state={
@@ -19,8 +20,15 @@ export class signin extends Component {
     }
 
     signHandle=()=>{
+        //todo:form validation add//////////////////
         auth.signInWithEmailAndPassword(this.state.email,this.state.password).then(
-            this.setState({signin:true})
+          user => {
+              if(user !== null || user !== undefined){
+                  this.setState({signin:true})
+              }else{
+                  return null;
+              }
+          }
         )
         .catch(err=>
             this.setState({error:err}))

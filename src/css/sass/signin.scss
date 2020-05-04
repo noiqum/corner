@@ -29,12 +29,38 @@
     }
 
     &__buttons{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            @include respond(middle){
+                width: 15%;
+            }
+
 
         &-register{
-
+            text-decoration: none;
+            display: inline-block;
+            font-weight: 500;
+            letter-spacing: 2px;
+            color: $grey-3;
+            font-size: 1.3rem;
+            margin-right: 1rem;
+            &:hover{
+                color:$grey-6;
+                font-size: 1.4rem;
+            }
         }
         &-submit{
-
+            border: none;
+            padding: 0.7rem 1.7rem;
+            display: inline-block;
+            border-radius: 5px;
+            cursor: pointer;
+            &:hover{
+                background-color: $grey-5;
+                color:#fff;
+            }
         }
     }
 }
@@ -46,6 +72,11 @@ input[type=email]:focus + label{
 }
 
 input[type=password]:focus + label{
+    color: purple;
+    font-size: 1.2rem;
+}
+
+input[type=text]:focus + label{
     color: purple;
     font-size: 1.2rem;
 }

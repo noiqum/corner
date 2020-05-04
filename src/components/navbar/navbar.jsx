@@ -47,13 +47,19 @@ export class navbar extends Component {
       )
   }
 
+  unSubscribeFromAuth=null
+
     componentDidMount(){
-        auth.onAuthStateChanged(user=>{
+       this.unSubscribeFromAuth= auth.onAuthStateChanged(user=>{
             this.setState({
                 currentUser:user
             })
-            console.log(user)
+            
         })
+    }
+
+    componentWillUnmount(){
+        this.unSubscribeFromAuth();
     }
 
     render() {
@@ -84,6 +90,11 @@ export class navbar extends Component {
                     }
                     <Link className='navbar__slide__link' onClick={this.menuClick} to='/shop'> Shop</Link>
                     <Link className='navbar__slide__link' onClick={this.menuClick} to='/contact'>Contact</Link>
+                    {this.state.currentUser === null
+                    ?
+                    null
+                    :
+                    <Link className='navbar-lg__link' onClick={this.menuClick} to='/contact'>user</Link>}
                     </div>
                 </div>
             </div>
@@ -107,7 +118,11 @@ export class navbar extends Component {
                     <Link className="navbar-lg__link" onClick={this.signoutHandle}>Sign out</Link>}
                     <Link className='navbar-lg__link' onClick={this.menuClick} to='/shop'> Shop</Link>
                     <Link className='navbar-lg__link' onClick={this.menuClick} to='/contact'>Contact</Link>
-                    <Link className='navbar-lg__link' onClick={this.menuClick} to='/contact'>user</Link>
+                    {this.state.currentUser === null
+                    ?
+                    null
+                    :
+                    <Link className='navbar-lg__link' onClick={this.menuClick} to='/contact'>user</Link>}
                 </div>
             </div>
             </div>

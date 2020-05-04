@@ -267,6 +267,34 @@
       text-transform: capitalize;
       letter-spacing: 2px;
       transform: translateY(-80px); }
+  .signin__buttons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between; }
+    @media screen and (min-width: 600px) {
+      .signin__buttons {
+        width: 15%; } }
+    .signin__buttons-register {
+      text-decoration: none;
+      display: inline-block;
+      font-weight: 500;
+      letter-spacing: 2px;
+      color: #666666;
+      font-size: 1.3rem;
+      margin-right: 1rem; }
+      .signin__buttons-register:hover {
+        color: #212121;
+        font-size: 1.4rem; }
+    .signin__buttons-submit {
+      border: none;
+      padding: 0.7rem 1.7rem;
+      display: inline-block;
+      border-radius: 5px;
+      cursor: pointer; }
+      .signin__buttons-submit:hover {
+        background-color: #383838;
+        color: #fff; }
 
 input[type=email]:focus + label {
   color: purple;
@@ -276,10 +304,46 @@ input[type=password]:focus + label {
   color: purple;
   font-size: 1.2rem; }
 
+input[type=text]:focus + label {
+  color: purple;
+  font-size: 1.2rem; }
+
+.signup {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 90%;
+  min-height: 70vh;
+  margin: 0 auto; }
+  .signup input {
+    padding: 1rem 2rem;
+    border: none;
+    border-bottom: 1px solid #666666;
+    margin-bottom: 2rem; }
+  .signup label {
+    font-size: 1.6rem;
+    pointer-events: none;
+    text-transform: capitalize;
+    letter-spacing: 2px;
+    transform: translateY(-80px); }
+  .signup__submit {
+    border: none;
+    padding: 0.7rem 1.7rem;
+    display: inline-block;
+    border-radius: 5px;
+    cursor: pointer; }
+    .signup__submit:hover {
+      background-color: #383838;
+      color: #fff; }
+
 :root {
   font-size: 10px; }
 
 body {
   margin: 0;
   padding: 0;
+  box-sizing: border-box; }
+
+* {
   box-sizing: border-box; }

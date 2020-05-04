@@ -6,6 +6,7 @@
 @import './navbar-lg.scss';
 @import './item.scss';
 @import './signin.scss';
+@import './signup.scss';
 
 
 
@@ -18,4 +19,7 @@ body{
     padding: 0;
     box-sizing: border-box;
     
+}
+*{
+    box-sizing: border-box;
 }

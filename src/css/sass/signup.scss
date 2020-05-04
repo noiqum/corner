@@ -1,0 +1,32 @@
+@import './mixin.scss';
+@import './variables.scss';
+
+
+.signup{
+
+    @include center;
+    width: 90%;
+    min-height:70vh;
+    margin: 0 auto;
+
+    & input{
+        @include input;
+    }
+
+    & label{
+        @include label;
+    }
+
+    &__submit{
+        border: none;
+        padding: 0.7rem 1.7rem;
+        display: inline-block;
+        border-radius: 5px;
+        cursor: pointer;
+        &:hover{
+            background-color: $grey-5;
+            color:#fff;
+        }
+    }
+
+}

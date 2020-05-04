@@ -8,6 +8,7 @@ import './App.css';
 import Container from './components/container/container';
 import Navbar from './components/navbar/navbar';
 import Signin from './components/signin/signin';
+import Signup from './components/signin/signup';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
       <Switch>
         <Route  exact path='/' component={Container}></Route>
         <Route exact path='/signin' component={Signin}></Route>
+        <Route exact path='/signup' component={Signup}></Route>
         <Route path='/shop'></Route>
         <Route path='/shop/:collection'></Route>
       </Switch>
