@@ -160,7 +160,10 @@
     letter-spacing: 3px;
     text-transform: uppercase;
     margin-left: 2rem;
-    margin-right: 3rem; }
+    margin-right: 3rem;
+    cursor: pointer; }
+    .navbar-lg__logo a {
+      all: inherit; }
   .navbar-lg__search {
     display: flex;
     flex: 1 1 33%; }
@@ -203,7 +206,8 @@
   overflow: hidden;
   max-width: 40rem;
   position: relative;
-  margin-bottom: 2rem; }
+  margin-bottom: 2rem;
+  border: 2px solid #212121; }
   @media screen and (min-width: 600px) {
     .item {
       overflow: hidden;

@@ -5,6 +5,8 @@ import CrossIcon from '../icons/cross-icon';
 import '../../css/sass/navbar.scss';
 import {Link} from 'react-router-dom';
 import {auth} from '../../firebase/firebase.utils';
+import {connect} from 'react-redux';
+import {setCurrentUser} from '../../store/actions/user-actions';
 
 
 
@@ -50,12 +52,20 @@ export class navbar extends Component {
   unSubscribeFromAuth=null
 
     componentDidMount(){
+    
+
        this.unSubscribeFromAuth= auth.onAuthStateChanged(user=>{
             this.setState({
                 currentUser:user
             })
+            const userOn={};
+            userOn.uid=user.uid;
+            userOn.email=user.email;
             
+            this.props.setCurrentUser(userOn);
         })
+
+        
     }
 
     componentWillUnmount(){
@@ -101,7 +111,7 @@ export class navbar extends Component {
             {/* larger screen version//////////////////////////////////////////////////////////////////////////////////// */}
 
             <div className="navbar-lg">
-                <div className="navbar-lg__logo">corner</div>
+                <div className="navbar-lg__logo"><Link to='/'>corner</Link></div>
                 <div className="navbar-lg__search">
                     <form action="" className="navbar-lg__search__form">
                         <input type="text" className="navbar-lg__search__form__input"/>
@@ -115,14 +125,14 @@ export class navbar extends Component {
                      ?
                     <Link className='navbar-lg__link' onClick={this.menuClick} to="/signin">Sign In</Link>
                     :
-                    <Link className="navbar-lg__link" onClick={this.signoutHandle}>Sign out</Link>}
+                    <Link  to='/'className="navbar-lg__link" onClick={this.signoutHandle}>Sign out</Link>}
                     <Link className='navbar-lg__link' onClick={this.menuClick} to='/shop'> Shop</Link>
                     <Link className='navbar-lg__link' onClick={this.menuClick} to='/contact'>Contact</Link>
                     {this.state.currentUser === null
                     ?
                     null
                     :
-                    <Link className='navbar-lg__link' onClick={this.menuClick} to='/contact'>user</Link>}
+                    <Link className='navbar-lg__link' onClick={this.menuClick} to='/user'>user</Link>}
                 </div>
             </div>
             </div>
@@ -130,4 +140,17 @@ export class navbar extends Component {
     }
 }
 
-export default navbar;
+const mapState=state=>{
+
+    return{
+        currentUser:state.user.currentUser
+    }
+}
+
+const mapDispatch=dispatch=>{
+    return{
+        setCurrentUser:(user)=>dispatch(setCurrentUser(user))
+    }
+}
+
+export default  connect(mapState,mapDispatch)(navbar);

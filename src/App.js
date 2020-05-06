@@ -9,6 +9,7 @@ import Container from './components/container/container';
 import Navbar from './components/navbar/navbar';
 import Signin from './components/signin/signin';
 import Signup from './components/signin/signup';
+import User from './components/user/user';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route exact path='/signup' component={Signup}></Route>
         <Route path='/shop'></Route>
         <Route path='/shop/:collection'></Route>
+        <Route path='/user' component={User}></Route>
       </Switch>
     </div>
 

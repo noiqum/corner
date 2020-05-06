@@ -23,6 +23,11 @@
         text-transform: uppercase;
         margin-left: 2rem;
         margin-right: 3rem;
+        cursor: pointer;
+
+        & a{
+            all:inherit;
+        }
     }
 
     &__search{
