@@ -7,6 +7,9 @@ import {Link} from 'react-router-dom';
 import {auth} from '../../firebase/firebase.utils';
 import {connect} from 'react-redux';
 import {setCurrentUser} from '../../store/actions/user-actions';
+import Chart from '../chart/chart';
+import ChartDropdown from '../chart/chart-dropdown';
+import {basketClick} from '../../store/actions/cart-actions';
 
 
 
@@ -40,6 +43,10 @@ export class navbar extends Component {
           })
       }
       
+  }
+
+  basketClickHandle=()=>{
+      this.props.basketClick()
   }
 
   signoutHandle=()=>{
@@ -104,7 +111,7 @@ export class navbar extends Component {
                     ?
                     null
                     :
-                    <Link className='navbar-lg__link' onClick={this.menuClick} to='/contact'>user</Link>}
+                    <Link className='navbar-lg__link' onClick={this.menuClick} to='/user'><Chart/></Link>}
                     </div>
                 </div>
             </div>
@@ -132,8 +139,9 @@ export class navbar extends Component {
                     ?
                     null
                     :
-                    <Link className='navbar-lg__link' onClick={this.menuClick} to='/user'>user</Link>}
+                    <div className='navbar-lg__link' onClick={this.basketClickHandle}><Chart/></div>}
                 </div>
+                {this.props.basket && <ChartDropdown/>}
             </div>
             </div>
         )
@@ -143,13 +151,15 @@ export class navbar extends Component {
 const mapState=state=>{
 
     return{
-        currentUser:state.user.currentUser
+        currentUser:state.user.currentUser,
+        basket:state.cart.basketClick
     }
 }
 
 const mapDispatch=dispatch=>{
     return{
-        setCurrentUser:(user)=>dispatch(setCurrentUser(user))
+        setCurrentUser:(user)=>dispatch(setCurrentUser(user)),
+        basketClick:()=>dispatch(basketClick())
     }
 }
 

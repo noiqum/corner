@@ -1,0 +1,25 @@
+@import './mixin.scss';
+@import './variables.scss';
+
+
+.chart{
+  width: 45px;
+  height: 45px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+
+  & svg {
+      fill: $grey-4;
+  }
+
+
+  .item-count{
+    position: absolute;
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-top: 5px;
+  }
+}

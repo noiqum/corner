@@ -10,6 +10,7 @@ import Navbar from './components/navbar/navbar';
 import Signin from './components/signin/signin';
 import Signup from './components/signin/signup';
 import User from './components/user/user';
+import Basket from './components/basket/basket';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <Route path='/shop'></Route>
         <Route path='/shop/:collection'></Route>
         <Route path='/user' component={User}></Route>
+        <Route path='/basket' component={Basket}></Route>
       </Switch>
     </div>
 
