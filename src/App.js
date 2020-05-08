@@ -11,8 +11,11 @@ import Signin from './components/signin/signin';
 import Signup from './components/signin/signup';
 import User from './components/user/user';
 import Basket from './components/basket/basket';
+import Collection from './components/collections/collection';
+
 
 function App() {
+
   return (
     <Router>
     <div className="App">
@@ -21,8 +24,7 @@ function App() {
         <Route  exact path='/' component={Container}></Route>
         <Route exact path='/signin' component={Signin}></Route>
         <Route exact path='/signup' component={Signup}></Route>
-        <Route path='/shop'></Route>
-        <Route path='/shop/:collection'></Route>
+        <Route path='/shop/:collection' component={Collection}></Route>
         <Route path='/user' component={User}></Route>
         <Route path='/basket' component={Basket}></Route>
       </Switch>

@@ -1,7 +1,11 @@
+import {addItemToCart,getTotal} from '../../components/chart/chart.utils';
+
+
 const initial_state={
 
     cart:[],
-    basketClick:false
+    basketClick:false,
+    totalItems:null
 
 
 }
@@ -12,8 +16,8 @@ const cartReducer=(state=initial_state,action)=>{
               case 'ADD_TO_CART':
             return{
                 ...state,
-                ...state.cart,
-                ...state.cart.push(action.item)
+                cart:addItemToCart(state.cart,action.item),
+            
             }
             case 'BASKET_CLICK':
                 return{

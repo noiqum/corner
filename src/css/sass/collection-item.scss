@@ -1,0 +1,56 @@
+@import './mixin.scss';
+@import './variables.scss';
+
+.collection-item{
+    @include center;
+
+    margin: 1rem;
+    
+    &:hover > div{
+        background-size: 150%;
+        background-position: center;
+
+    }
+
+    &__img{
+        width: 25rem;
+        height: 30rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: center;
+        transition: all 1s;
+
+        & span{
+            font-size: 2rem;
+            text-transform: capitalize;
+            margin-bottom: 2rem;
+            background-color: $grey-6;
+            padding: 0.5rem 1rem;
+            color: white;
+            border-radius: 5px;
+            opacity: 0.85;
+            cursor: pointer;
+            transition: all 0.5s;
+            &:hover{
+                background-color: rgb(54, 1, 54);
+            }
+            
+        }
+        
+    }
+    &__label{
+        display: flex;
+        justify-content: space-between;
+        font-size: 1.6rem;
+        align-items: center;
+        width: 100%;
+        padding: 0.7rem 1rem;
+
+        & span{
+            font-size: inherit;
+            font-weight: 500;
+        }
+    }
+
+}

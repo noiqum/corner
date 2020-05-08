@@ -1,0 +1,16 @@
+@import './mixin.scss';
+@import './variables.scss';
+
+
+.collection-container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    height: auto;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 3rem 4rem;
+    overflow: hidden;
+
+}

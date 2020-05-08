@@ -45,3 +45,29 @@
       }
   }
 }
+
+
+////////////////////////////////////////////////////
+
+.dropdown-item{
+  max-width: 25rem;
+  max-height: 10rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  border: 1px solid $black;
+
+  span{
+    font-size: 1.3rem;
+    padding: 0 5px;
+  }
+
+  &__pic{
+    width: 5rem;
+    height: 6rem;
+    background-position: center;
+    background-size: cover;
+  }
+}
