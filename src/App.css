@@ -36,7 +36,7 @@
     border: none;
     cursor: pointer; }
   .navbar__hamburger {
-    margin-left: 6rem; }
+    overflow: hidden; }
     @media screen and (min-width: 600px) {
       .navbar__hamburger {
         display: none; } }
@@ -54,7 +54,7 @@
     transition: all 0.5s;
     position: absolute;
     left: 0;
-    top: 100%;
+    top: 110%;
     color: #949494;
     display: none;
     z-index: 100; }
@@ -141,7 +141,6 @@
   @media screen and (min-width: 600px) {
     .search-icon {
       fill: purple;
-      margin-top: 2rem;
       display: inline-block; } }
 
 .navbar-lg {
@@ -173,9 +172,9 @@
         background-image: linear-gradient(to right, #0A0A0A, #949494);
         border-radius: 50px;
         border: none;
-        height: 2.5rem;
+        height: 2.6rem;
         color: #fff;
-        padding: 0.5rem 3rem;
+        padding: 0.7rem 3rem;
         margin-right: -3.3rem;
         width: 70%; }
     .navbar-lg__search__button {
@@ -401,7 +400,7 @@ input[type=text]:focus + label {
   flex-wrap: nowrap;
   border: 1px solid #0A0A0A; }
   .dropdown-item span {
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     padding: 0 5px; }
   .dropdown-item__pic {
     width: 5rem;
@@ -460,6 +459,67 @@ input[type=text]:focus + label {
   align-items: center;
   margin: 3rem 4rem;
   overflow: hidden; }
+
+.basket {
+  width: 80%;
+  margin: 0 auto; }
+  @media screen and (min-width: 600px) {
+    .basket {
+      width: 55%;
+      min-height: 90vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 50px auto 0; } }
+  .basket__header {
+    width: 100%;
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid darkgrey; }
+    .basket__header__block {
+      text-transform: capitalize;
+      width: 23%; }
+      @media screen and (min-width: 600px) {
+        .basket__header__block {
+          font-size: 1.4rem; } }
+      .basket__header__block:last-child {
+        width: 8%; }
+  .basket__total {
+    align-self: flex-end;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-left: 5px;
+    font-size: 1.8rem; }
+  .basket__payment {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center; }
+
+.basket-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  align-self: stretch;
+  margin: 10px 0;
+  border-bottom: 2px solid #666666;
+  padding-bottom: 5px; }
+  .basket-item div {
+    width: 5rem;
+    height: 5rem;
+    font-size: 1.1rem; }
+  .basket-item div:last-child {
+    cursor: pointer;
+    font-size: 1.5rem; }
+  .basket-item .img {
+    width: 5rem;
+    height: 5rem;
+    display: inline-block;
+    background-position: center;
+    background-size: cover; }
 
 :root {
   font-size: 10px; }

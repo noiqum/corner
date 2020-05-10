@@ -105,13 +105,13 @@ export class navbar extends Component {
                     :
                     <Link className="navbar__slide__link" onClick={this.signoutHandle} to='/'>Sign out</Link>
                     }
-                    <Link className='navbar__slide__link' onClick={this.menuClick} to='/shop'> Shop</Link>
+                    <Link className='navbar__slide__link' onClick={this.menuClick} to='/'> Shop</Link>
                     <Link className='navbar__slide__link' onClick={this.menuClick} to='/contact'>Contact</Link>
                     {this.state.currentUser === null
                     ?
                     null
                     :
-                    <Link className='navbar-lg__link' onClick={this.menuClick} to='/user'><Chart/></Link>}
+                    <Link className='navbar__slide__link' onClick={this.menuClick} to='/basket'><Chart/></Link>}
                     </div>
                 </div>
             </div>
@@ -133,7 +133,7 @@ export class navbar extends Component {
                     <Link className='navbar-lg__link' onClick={this.menuClick} to="/signin">Sign In</Link>
                     :
                     <Link  to='/'className="navbar-lg__link" onClick={this.signoutHandle}>Sign out</Link>}
-                    <Link className='navbar-lg__link' onClick={this.menuClick} to='/shop'> Shop</Link>
+                    <Link className='navbar-lg__link' onClick={this.menuClick} to='/'> Shop</Link>
                     <Link className='navbar-lg__link' onClick={this.menuClick} to='/contact'>Contact</Link>
                     {this.state.currentUser === null
                     ?

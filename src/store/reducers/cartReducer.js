@@ -1,4 +1,4 @@
-import {addItemToCart,getTotal} from '../../components/chart/chart.utils';
+import {addItemToCart} from '../../components/chart/chart.utils';
 
 
 const initial_state={
@@ -23,6 +23,13 @@ const cartReducer=(state=initial_state,action)=>{
                 return{
                     ...state,
                     basketClick:!state.basketClick
+                }
+            case 'REMOVE_FROM_CART':
+                return{
+                    ...state,
+                    cart:state.cart.filter(item=>{
+                        return item.id !== action.item.id
+                    })
                 }
           
               default:

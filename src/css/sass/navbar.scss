@@ -8,6 +8,7 @@
     width:100%;
     min-height: 10vh;
     position: relative;
+    
 
     @include respond(middle){
         display: none;
@@ -52,7 +53,8 @@
 
 
     &__hamburger{
-        margin-left: 6rem;
+        
+        overflow: hidden;
         @include respond(middle){
             display: none;
         }
@@ -78,7 +80,7 @@
         transition: all 0.5s;
         position: absolute;
         left: 0;
-        top: 100%;
+        top: 110%;
         
         color: $grey-1;
         display: none;

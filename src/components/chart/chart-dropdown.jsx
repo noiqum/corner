@@ -1,9 +1,15 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+import {withRouter} from 'react-router-dom';
 import {connect} from 'react-redux'
 import DropdownItem from './dropdown-item';
+import {basketClick} from '../../store/actions/cart-actions';
 
-function chartDropdown({cart}) {
+function chartDropdown({cart,history,close}) {
+    const basketHandle=()=>{
+        history.push('/basket');
+        close();
+    }
+
     return (
         <div className='dropdown'>
             <div className="dropdown__item">
@@ -11,7 +17,8 @@ function chartDropdown({cart}) {
                     return <DropdownItem  key={item.id} item={item}/>
                 })}
             </div>
-            <button  className="dropdown__button"><Link to='/basket'>Go to basket</Link></button>
+            
+            <button onClick={basketHandle} className="dropdown__button">go to basket</button>
         </div>
     )
 }
@@ -20,5 +27,10 @@ const mapState=state=>{
         cart:state.cart.cart
     }
 }
+const mapDispatch=dispatch=>{
+    return{
+        close:()=>{dispatch(basketClick())}
+    }
+}
 
-export default connect(mapState)(chartDropdown);
+export default withRouter(connect(mapState,mapDispatch)(chartDropdown));
