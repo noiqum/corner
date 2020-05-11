@@ -3,10 +3,12 @@ import {combineReducers} from 'redux';
 import cartReducer from './cartReducer';
 import {persistReducer} from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
+import itemReducer from './itemReducer';
 
 const rootReducer =combineReducers({
     user:userReducer,
-    cart:cartReducer
+    cart:cartReducer,
+    item:itemReducer
 
 })
 

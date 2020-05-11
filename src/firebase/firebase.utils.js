@@ -45,3 +45,4 @@ export const addItemsToDB= async (itemArray)=>{
 
     return batch.commit();
 }
+

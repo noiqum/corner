@@ -1,25 +1,23 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import CollectionContainer from './collectionContainer';
-import ShopData from '../data/shop-data';
+
 
 export class womens extends Component {
 
-    state={
-        data:ShopData
-    }
+    
 
     render() {
         return (
             <div>
-                <CollectionContainer collection={this.state.data[3].items}/>
+                <CollectionContainer collection={this.props.storeData[4].items}/>
             </div>
         )
     }
 }
 
 const mapStateToProps = (state) => ({
-    
+    storeData:state.item.items
 })
 
 const mapDispatchToProps = {

@@ -6,24 +6,20 @@ import ShopData from '../data/shop-data';
 
 export class mens extends Component {
 
-    state={
-        data:ShopData
-    }
+    
     render() {
         return (
             <div>
-                <CollectionContainer collection={this.state.data[4].items}/>
+                <CollectionContainer collection={this.props.storeData[2].items}/>
             </div>
         )
     }
 }
 
 const mapStateToProps = (state) => ({
-    
+        storeData:state.item.items
 })
 
-const mapDispatchToProps = {
-    
-}
 
-export default connect(mapStateToProps, mapDispatchToProps)(mens)
+
+export default connect(mapStateToProps)(mens)

@@ -1,20 +1,23 @@
 import React, { Component } from 'react';
 import CollectionContainer from './collectionContainer';
-import ShopData from '../data/shop-data';
+import {connect} from 'react-redux';
 
 export class jackets extends Component {
 
-    state={
-        data:ShopData
-    }
+    
 
     render() {
         return (
             <div>
-                 <CollectionContainer collection={this.state.data[2].items}/>
+                 <CollectionContainer collection={this.props.storeData[1].items}/>
             </div>
         )
     }
 }
+const mapState=state=>{
+    return{
+        storeData:state.item.items
+    }
+}
 
-export default jackets
+export default connect(mapState)(jackets)

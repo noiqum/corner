@@ -1,22 +1,25 @@
 import React, { Component } from 'react';
 import CollectionContainer from './collectionContainer';
 import ShopData from '../data/shop-data';
+import {connect} from 'react-redux';
+
 
 
 export class hats extends Component {
-
-    state={
-        data:ShopData
-    }
 
      
     render() {
         return (
             <div>
-                <CollectionContainer collection={this.state.data[0].items}/>
+                <CollectionContainer collection={this.props.storeData[0].items}/>
             </div>
         )
     }
 }
 
-export default hats
+const mapState=state=>{
+    return{
+        storeData:state.item.items
+    }
+}
+export default connect(mapState)(hats);
