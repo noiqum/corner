@@ -21,3 +21,27 @@ firebase.initializeApp(api_key);
 export const auth=firebase.auth();
 export const firestore=firebase.firestore();
 export default firebase;
+
+
+export const addSectionsToDB= async (sectionArray)=>{
+    const ref=firestore.collection('sections');
+    const batch=firestore.batch();
+
+    sectionArray.forEach(elm=>{
+        const docRef=ref.doc();
+        batch.set(docRef,elm)
+    })
+
+    return await batch.commit();
+}
+export const addItemsToDB= async (itemArray)=>{
+    const ref=firestore.collection('items');
+    const batch=firestore.batch();
+
+    itemArray.forEach(elm=>{
+        const docRef=ref.doc(elm.title);
+        batch.set(docRef,elm)
+    })
+
+    return batch.commit();
+}
