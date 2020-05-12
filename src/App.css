@@ -424,7 +424,9 @@ input[type=text]:focus + label {
     flex-direction: column;
     justify-content: flex-end;
     align-items: center;
-    transition: all 1s; }
+    transition: all 1s;
+    background-repeat: no-repeat;
+    background-size: cover; }
     .collection-item__img span {
       font-size: 2rem;
       text-transform: capitalize;

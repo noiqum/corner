@@ -10,7 +10,7 @@ export class womens extends Component {
     render() {
         return (
             <div>
-                <CollectionContainer collection={this.props.storeData[4].items}/>
+                <CollectionContainer collection={this.props.storeData[4].items }/>
             </div>
         )
     }
