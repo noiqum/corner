@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import CollectionContainer from './collectionContainer';
-import ShopData from '../data/shop-data';
+
 
 
 export class mens extends Component {

@@ -1,31 +1,28 @@
-@import './variables.scss';
-@import './mixin.scss';
-@import './navbar.scss';
-@import './container.scss';
-@import './icons.scss';
-@import './navbar-lg.scss';
-@import './item.scss';
-@import './signin.scss';
-@import './signup.scss';
-@import './chart.scss';
-@import './chart-dropdown.scss';
-@import './collection-item.scss';
-@import './collection-container.scss';
-@import './basket.scss';
-@import './basket-item.scss';
+@import "./variables.scss";
+@import "./mixin.scss";
+@import "./navbar.scss";
+@import "./container.scss";
+@import "./icons.scss";
+@import "./navbar-lg.scss";
+@import "./item.scss";
+@import "./signin.scss";
+@import "./signup.scss";
+@import "./chart.scss";
+@import "./chart-dropdown.scss";
+@import "./collection-item.scss";
+@import "./collection-container.scss";
+@import "./basket.scss";
+@import "./basket-item.scss";
+@import "./contact.scss";
 
-
-
-:root{
-    font-size: 10px;
-
+:root {
+  font-size: 10px;
 }
-body{
-    margin:0;
-    padding: 0;
-    box-sizing: border-box;
-    
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-*{
-    box-sizing: border-box;
+* {
+  box-sizing: border-box;
 }

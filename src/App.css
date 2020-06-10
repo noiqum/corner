@@ -523,6 +523,35 @@ input[type=text]:focus + label {
     background-position: center;
     background-size: cover; }
 
+.contact {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem; }
+  .contact__frame {
+    width: 80%;
+    height: 80%;
+    max-width: 80%;
+    border: 10px solid rgba(0, 0, 0, 0.8); }
+    @media screen and (min-width: 600px) {
+      .contact__frame {
+        width: 60%;
+        max-width: 60%;
+        height: 70%; } }
+    .contact__frame img {
+      display: inline-flex;
+      width: 80%;
+      height: 80%; }
+      @media screen and (min-width: 600px) {
+        .contact__frame img {
+          max-width: 40vw;
+          max-height: 60vh; } }
+  .contact__info {
+    font-size: 1.5rem;
+    padding: 1rem 2rem;
+    letter-spacing: 3px; }
+
 :root {
   font-size: 10px; }
 

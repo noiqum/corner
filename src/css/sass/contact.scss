@@ -1,0 +1,37 @@
+@import "./mixin.scss";
+@import "./variables.scss";
+
+.contact {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  &__frame {
+    width: 80%;
+    height: 80%;
+    max-width: 80%;
+    @include respond(middle) {
+      width: 60%;
+      max-width: 60%;
+      height: 70%;
+    }
+    border: 10px solid rgba(0, 0, 0, 0.8);
+
+    & img {
+      display: inline-flex;
+      width: 80%;
+      height: 80%;
+
+      @include respond(middle) {
+        max-width: 40vw;
+        max-height: 60vh;
+      }
+    }
+  }
+  &__info {
+    font-size: 1.5rem;
+    padding: 1rem 2rem;
+    letter-spacing: 3px;
+  }
+}

@@ -1,6 +1,6 @@
 import React from 'react'
 import {connect} from 'react-redux';
-import {removeFromCart} from '../../store/actions/cart-actions';
+import {removeFromCartWithMsg} from '../../store/actions/cart-actions';
 
 function basketItem({item,removeItem}) {
     return (
@@ -16,7 +16,7 @@ function basketItem({item,removeItem}) {
 
 const mapDispatch=dispatch=>{
     return{
-        removeItem:(item)=>{dispatch(removeFromCart(item))}
+        removeItem:(item)=>{dispatch(removeFromCartWithMsg(item))}
     }
 }
 

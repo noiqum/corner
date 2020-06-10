@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import CollectionContainer from './collectionContainer';
-import ShopData from '../data/shop-data';
 import {connect} from 'react-redux';
 
 

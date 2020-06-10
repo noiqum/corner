@@ -6,14 +6,23 @@ import * as serviceWorker from './serviceWorker';
 import {Provider} from 'react-redux';
 import {store,persistor} from './store/store';
 import {PersistGate} from 'redux-persist/integration/react';
+import ReduxToastr from 'react-redux-toastr'
+import 'react-redux-toastr/lib/css/react-redux-toastr.min.css';
 
 
 ReactDOM.render(
   <Provider store={store}>
   <React.StrictMode>
-    <PersistGate persistor={persistor}>
-    <App />
-    </PersistGate>
+    <ReduxToastr
+       position="top-center"
+       transitionIn="fadeIn"
+       transitionOut="fadeOut"
+       className='modified'/>
+      <PersistGate persistor={persistor}>
+        
+          <App />
+        
+      </PersistGate>
   </React.StrictMode>
   </Provider>,
   document.getElementById('root')

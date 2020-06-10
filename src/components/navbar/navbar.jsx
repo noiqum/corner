@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import SearchIcon from '../icons/search-icon';
+
 import MenuIcon from '../icons/menu-icon';
 import CrossIcon from '../icons/cross-icon';
 import '../../css/sass/navbar.scss';
@@ -65,11 +65,16 @@ export class navbar extends Component {
             this.setState({
                 currentUser:user
             })
+            if(user){
             const userOn={};
             userOn.uid=user.uid;
             userOn.email=user.email;
             
             this.props.setCurrentUser(userOn);
+            }else{
+                this.props.setCurrentUser(null)
+            }
+            
         })
 
         
@@ -83,14 +88,8 @@ export class navbar extends Component {
         return (<div>
             <div className='navbar'>
                 <div className="navbar__logo"><Link to='/'>corner</Link></div>
-                <div className="navbar__search">
-                    <form action="">
-                    <input type="text" className="navbar__search__input"/>
-                    <button className="navbar__search__button">
-                        <SearchIcon/>
-                    </button>
-                    </form>
-                </div>
+                {this.state.currentUser && <Link className='navbar__slide__link' 
+                 to='/basket'><Chart/></Link>}
                 <div className="navbar__hamburger" onClick={this.menuClick}>
                    <input name='menu' type="checkbox" className="navbar__hamburger__checkbox"/>
                    <label htmlFor="menu" className="navbar__hamburger__label">
@@ -119,14 +118,7 @@ export class navbar extends Component {
 
             <div className="navbar-lg">
                 <div className="navbar-lg__logo"><Link to='/'>corner</Link></div>
-                <div className="navbar-lg__search">
-                    <form action="" className="navbar-lg__search__form">
-                        <input type="text" className="navbar-lg__search__form__input"/>
-                        <button className="navbar-lg__search__button">
-                            <SearchIcon/>
-                        </button>
-                    </form>
-                </div>
+                
                 <div className="navbar-lg__links">
                     {this.state.currentUser === null
                      ?

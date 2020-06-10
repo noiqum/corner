@@ -4,11 +4,13 @@ import cartReducer from './cartReducer';
 import {persistReducer} from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 import itemReducer from './itemReducer';
+import {reducer as toastrReducer} from 'react-redux-toastr';
 
 const rootReducer =combineReducers({
     user:userReducer,
     cart:cartReducer,
-    item:itemReducer
+    item:itemReducer,
+    toastr:toastrReducer
 
 })
 
